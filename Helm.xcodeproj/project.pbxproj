@@ -23,8 +23,10 @@
 		428792921B1979F000D6D434 /* red_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4287928C1B1979F000D6D434 /* red_button@3x.png */; };
 		428792951B197C7600D6D434 /* AutopilotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 428792941B197C7600D6D434 /* AutopilotView.m */; };
 		428792981B197CF000D6D434 /* AppStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 428792971B197CF000D6D434 /* AppStyle.m */; };
+		4287929E1B19844000D6D434 /* SeaTalkMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4287929A1B19844000D6D434 /* SeaTalkMessage.cpp */; };
+		4287929F1B19844000D6D434 /* SeaTalkParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4287929C1B19844000D6D434 /* SeaTalkParser.cpp */; };
 		42BFDF051ABE04FD005461EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF041ABE04FD005461EB /* main.m */; };
-		42BFDF081ABE04FD005461EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF071ABE04FD005461EB /* AppDelegate.m */; };
+		42BFDF081ABE04FD005461EB /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF071ABE04FD005461EB /* AppDelegate.mm */; };
 		42BFDF101ABE04FD005461EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BFDF0F1ABE04FD005461EB /* Images.xcassets */; };
 		42BFDF131ABE04FD005461EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42BFDF111ABE04FD005461EB /* LaunchScreen.xib */; };
 		42BFDF1F1ABE04FD005461EB /* HelmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF1E1ABE04FD005461EB /* HelmTests.m */; };
@@ -70,11 +72,15 @@
 		428792941B197C7600D6D434 /* AutopilotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutopilotView.m; sourceTree = "<group>"; };
 		428792961B197CF000D6D434 /* AppStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStyle.h; sourceTree = "<group>"; };
 		428792971B197CF000D6D434 /* AppStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStyle.m; sourceTree = "<group>"; };
+		4287929A1B19844000D6D434 /* SeaTalkMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SeaTalkMessage.cpp; sourceTree = "<group>"; };
+		4287929B1B19844000D6D434 /* SeaTalkMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeaTalkMessage.h; sourceTree = "<group>"; };
+		4287929C1B19844000D6D434 /* SeaTalkParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SeaTalkParser.cpp; sourceTree = "<group>"; };
+		4287929D1B19844000D6D434 /* SeaTalkParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeaTalkParser.h; sourceTree = "<group>"; };
 		42BFDEFF1ABE04FD005461EB /* Helm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BFDF031ABE04FD005461EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42BFDF041ABE04FD005461EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42BFDF061ABE04FD005461EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		42BFDF071ABE04FD005461EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42BFDF071ABE04FD005461EB /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		42BFDF0F1ABE04FD005461EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42BFDF121ABE04FD005461EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		42BFDF181ABE04FD005461EB /* HelmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +125,7 @@
 		421727861AC26F6E00D7EFCA /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				428792991B19844000D6D434 /* SeaTalk */,
 				421727871AC26F6E00D7EFCA /* NMEA */,
 			);
 			path = Libraries;
@@ -162,6 +169,17 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		428792991B19844000D6D434 /* SeaTalk */ = {
+			isa = PBXGroup;
+			children = (
+				4287929A1B19844000D6D434 /* SeaTalkMessage.cpp */,
+				4287929B1B19844000D6D434 /* SeaTalkMessage.h */,
+				4287929C1B19844000D6D434 /* SeaTalkParser.cpp */,
+				4287929D1B19844000D6D434 /* SeaTalkParser.h */,
+			);
+			path = SeaTalk;
+			sourceTree = "<group>";
+		};
 		42BFDEF61ABE04FD005461EB = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				42BFDF061ABE04FD005461EB /* AppDelegate.h */,
-				42BFDF071ABE04FD005461EB /* AppDelegate.m */,
+				42BFDF071ABE04FD005461EB /* AppDelegate.mm */,
 				42BFDF0F1ABE04FD005461EB /* Images.xcassets */,
 				42BFDF111ABE04FD005461EB /* LaunchScreen.xib */,
 				42BFDF021ABE04FD005461EB /* Supporting Files */,
@@ -389,13 +407,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				428792951B197C7600D6D434 /* AutopilotView.m in Sources */,
+				4287929E1B19844000D6D434 /* SeaTalkMessage.cpp in Sources */,
 				4217278E1AC26F6E00D7EFCA /* NMEAMessage.cpp in Sources */,
+				4287929F1B19844000D6D434 /* SeaTalkParser.cpp in Sources */,
 				42BFDF361ABE068F005461EB /* ControlsView.mm in Sources */,
 				4217278F1AC26F6E00D7EFCA /* NMEAParser.cpp in Sources */,
 				421727941AC27AB900D7EFCA /* HMButton.m in Sources */,
 				421727851AC26AF700D7EFCA /* ConnectionController.mm in Sources */,
 				428792981B197CF000D6D434 /* AppStyle.m in Sources */,
-				42BFDF081ABE04FD005461EB /* AppDelegate.m in Sources */,
+				42BFDF081ABE04FD005461EB /* AppDelegate.mm in Sources */,
 				42BFDF371ABE068F005461EB /* ControlsViewController.m in Sources */,
 				42BFDF051ABE04FD005461EB /* main.m in Sources */,
 				421727901AC26F6E00D7EFCA /* NMEAShared.cpp in Sources */,

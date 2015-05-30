@@ -35,7 +35,7 @@
     [self addSubview:autopilotView];
     
     autopilotView.minusOneButton.targetBlock = ^{
-        [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,861105FA*0B\r\n"];
+        [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,861105FA*70\r\n"];
     };
     autopilotView.plusOneButton.targetBlock = ^{
         [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,861107F8*0B\r\n"];

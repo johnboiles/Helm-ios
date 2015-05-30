@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ConnectionController.h"
 #import "ControlsViewController.h"
+#import "NMEAMessage.h"
+#import "SeaTalkMessage.h"
 
 
 @interface AppDelegate () <ConnectionControllerDelegate>
@@ -66,7 +68,20 @@
 #pragma mark ConnectionControllerDelegate
 
 - (void)connectionController:(ConnectionController *)connectionController didGetNMEAMessage:(NSString *)NMEAMessage {
-    NSLog(@"RX: %@", NMEAMessage);
+//    NSLog(@"RX: %@", NMEAMessage);
+    if ([NMEAMessage hasPrefix:@"$STSEA"]) {
+        const char *messageString = [NMEAMessage cStringUsingEncoding:NSASCIIStringEncoding];
+        NMEAMessageSEA message = NMEAMessageSEA(messageString);
+
+        if ([NMEAMessage hasPrefix:@"$STSEA,10"]) {
+            SeaTalkMessageWindAngle seaTalkMessage = SeaTalkMessageWindAngle(message.seaTalkMessage());
+            NSLog(@"Wind angle: %f", seaTalkMessage.windAngle());
+        } else if ([NMEAMessage hasPrefix:@"$STSEA,84"]) {
+            SeaTalkMessageCompassHeadingAutopilotCourseRudderPosition seaTalkMessage = SeaTalkMessageCompassHeadingAutopilotCourseRudderPosition(message.seaTalkMessage());
+            NSLog(@"Autopilot heading: %d", seaTalkMessage.autopilotCourse());
+            NSLog(@"Autopilot autoMode: %d", seaTalkMessage.isAutoMode());
+        }
+    }
 }
 
 @end
