@@ -8,9 +8,11 @@
 
 #import <YOLayout/YOView.h>
 @class AutopilotView;
+@class HeadingIndicatorView;
 
 @interface ControlsView : YOView
 
 @property (readonly) AutopilotView *autopilotView;
+@property (readonly) HeadingIndicatorView *headingIndicatorView;
 
 @end

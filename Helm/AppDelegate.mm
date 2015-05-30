@@ -13,6 +13,7 @@
 #import "SeaTalkMessage.h"
 #import "ControlsView.h"
 #import "AutopilotView.h"
+#import "HeadingIndicatorView.h"
 
 
 @interface AppDelegate () <ConnectionControllerDelegate>
@@ -71,14 +72,19 @@
 #pragma mark ConnectionControllerDelegate
 
 - (void)connectionController:(ConnectionController *)connectionController didGetNMEAMessage:(NSString *)NMEAMessage {
-//    NSLog(@"RX: %@", NMEAMessage);
-    if ([NMEAMessage hasPrefix:@"$STSEA"]) {
+    NSLog(@"RX: %@", NMEAMessage);
+    if ([NMEAMessage hasPrefix:@"$GPRMC"]) {
+        const char *messageString = [NMEAMessage cStringUsingEncoding:NSASCIIStringEncoding];
+        NMEAMessageRMC message = NMEAMessageRMC(messageString);
+        self.controlsViewController.contentView.headingIndicatorView.speedLabel.text = [NSString stringWithFormat:@"%.1fkt", message.speedOverGround()];
+    } else if ([NMEAMessage hasPrefix:@"$STSEA"]) {
         const char *messageString = [NMEAMessage cStringUsingEncoding:NSASCIIStringEncoding];
         NMEAMessageSEA message = NMEAMessageSEA(messageString);
 
         if (message.messageType() == SeaTalkMessageTypeWindAngle) {
             SeaTalkMessageWindAngle seaTalkMessage = SeaTalkMessageWindAngle(message.seaTalkMessage());
             NSLog(@"Wind angle: %f", seaTalkMessage.windAngle());
+            [self.controlsViewController.contentView.headingIndicatorView setWindDirection:seaTalkMessage.windAngle()];
         } else if (message.messageType() == SeaTalkMessageTypeWindSpeed) {
             SeaTalkMessageWindSpeed seaTalkMessage = SeaTalkMessageWindSpeed(message.seaTalkMessage());
             NSLog(@"Wind Speed: %f", seaTalkMessage.windSpeed());
@@ -89,10 +95,14 @@
             NSString *formatString;
             if (seaTalkMessage.isAutoMode()) {
                 formatString = @"A%03d";
+                [self.controlsViewController.contentView.headingIndicatorView setAutopilotHeading:seaTalkMessage.autopilotCourse() - seaTalkMessage.compassHeading() ];
             } else {
                 formatString = @"S%03d";
             }
+            self.controlsViewController.contentView.headingIndicatorView.autopilotHeadingHidden = !seaTalkMessage.isAutoMode();
+
             self.controlsViewController.contentView.autopilotView.statusLabel.text = [NSString stringWithFormat:formatString, seaTalkMessage.autopilotCourse()];
+            self.controlsViewController.contentView.headingIndicatorView.headingLabel.text = [NSString stringWithFormat:@"%3dº", seaTalkMessage.compassHeading()];
         }
     }
 }

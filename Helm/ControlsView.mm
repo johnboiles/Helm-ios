@@ -12,10 +12,12 @@
 #import "AppDelegate.h"
 #import "ConnectionController.h"
 #import "AutopilotView.h"
+#import "HeadingIndicatorView.h"
 
 @interface ControlsView ()
 @property NSMutableArray *buttons;
 @property AutopilotView *autopilotView;
+@property HeadingIndicatorView *headingIndicatorView;
 @end
 
 @implementation ControlsView
@@ -33,7 +35,10 @@
 
     self.autopilotView = [AutopilotView new];
     [self addSubview:self.autopilotView];
-    
+
+    self.headingIndicatorView = [HeadingIndicatorView new];
+    [self addSubview:self.headingIndicatorView];
+
     self.autopilotView.minusOneButton.targetBlock = ^{
         [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,861105FA*70\r\n"];
     };
@@ -73,12 +78,15 @@
         CGRect autopilotRect = [layout setFrame:CGRectMake(0, y, size.width, 0) view:weakSelf.autopilotView options:YOLayoutOptionsSizeToFit | YOLayoutOptionsAlignCenterHorizontal];
         x = autopilotRect.origin.x;
         y += autopilotRect.size.height;
-        y += 10;
+        y += 25;
         
-        x += [layout setFrame:CGRectMake(x, y, 100, 50) view:lampOnButton].size.width;
-        x += 10;
+//        x += [layout setFrame:CGRectMake(x, y, 100, 50) view:lampOnButton].size.width;
+//        x += 10;
+//
+//        [layout setFrame:CGRectMake(x, y, 100, 50) view:lampOffButton];
 
-        [layout setFrame:CGRectMake(x, y, 100, 50) view:lampOffButton];
+        [layout setFrame:CGRectMake(0, y, size.width, 0) view:weakSelf.headingIndicatorView options:YOLayoutOptionsSizeToFit | YOLayoutOptionsAlignCenterHorizontal];
+
         return size;
     }];
 }
