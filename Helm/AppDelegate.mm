@@ -72,7 +72,7 @@
 #pragma mark ConnectionControllerDelegate
 
 - (void)connectionController:(ConnectionController *)connectionController didGetNMEAMessage:(NSString *)NMEAMessage {
-    NSLog(@"RX: %@", NMEAMessage);
+//    NSLog(@"RX: %@", NMEAMessage);
     if ([NMEAMessage hasPrefix:@"$GPRMC"]) {
         const char *messageString = [NMEAMessage cStringUsingEncoding:NSASCIIStringEncoding];
         NMEAMessageRMC message = NMEAMessageRMC(messageString);
@@ -83,14 +83,14 @@
 
         if (message.messageType() == SeaTalkMessageTypeWindAngle) {
             SeaTalkMessageWindAngle seaTalkMessage = SeaTalkMessageWindAngle(message.seaTalkMessage());
-            NSLog(@"Wind angle: %f", seaTalkMessage.windAngle());
+//            NSLog(@"Wind angle: %f", seaTalkMessage.windAngle());
             [self.controlsViewController.contentView.headingIndicatorView setWindDirection:seaTalkMessage.windAngle()];
         } else if (message.messageType() == SeaTalkMessageTypeWindSpeed) {
             SeaTalkMessageWindSpeed seaTalkMessage = SeaTalkMessageWindSpeed(message.seaTalkMessage());
-            NSLog(@"Wind Speed: %f", seaTalkMessage.windSpeed());
+//            NSLog(@"Wind Speed: %f", seaTalkMessage.windSpeed());
         } else if (message.messageType() == SeaTalkMessageTypeCompassHeadingAutopilotCourseRudderPosition) {
             SeaTalkMessageCompassHeadingAutopilotCourseRudderPosition seaTalkMessage = SeaTalkMessageCompassHeadingAutopilotCourseRudderPosition(message.seaTalkMessage());
-            NSLog(@"Autopilot mode: %d heading: %d", seaTalkMessage.isAutoMode(), seaTalkMessage.autopilotCourse());
+//            NSLog(@"Autopilot mode: %d heading: %d", seaTalkMessage.isAutoMode(), seaTalkMessage.autopilotCourse());
 
             NSString *formatString;
             if (seaTalkMessage.isAutoMode()) {
