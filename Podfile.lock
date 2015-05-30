@@ -1,0 +1,32 @@
+PODS:
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - CocoaAsyncSocket (7.4.1)
+  - YOLayout (0.1.5):
+    - YOLayout/Box (= 0.1.5)
+  - YOLayout/Box (0.1.5)
+
+DEPENDENCIES:
+  - BlocksKit (~> 2.2.5)
+  - CocoaAsyncSocket
+  - YOLayout (~> 0.1.5)
+
+SPEC CHECKSUMS:
+  BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  CocoaAsyncSocket: b0a1a89e7ea4c1c0ea4ec83f57d55117d3cdae06
+  YOLayout: d92d2f581f67a2f5e49e58447433eed6ac6b134a
+
+COCOAPODS: 0.36.0

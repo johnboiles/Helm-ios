@@ -7,16 +7,37 @@
 //
 
 #import "AppDelegate.h"
+#import "ConnectionController.h"
+#import "ControlsViewController.h"
 
-@interface AppDelegate ()
 
+@interface AppDelegate () <ConnectionControllerDelegate>
+@property UINavigationController *navigationController;
+@property ConnectionController *connectionController;
 @end
 
 @implementation AppDelegate
 
++ (AppDelegate *)sharedDelegate {
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
+#pragma mark UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.connectionController = [ConnectionController new];
+    self.connectionController.delegate = self;
+
+    ControlsViewController *controlsViewController = [ControlsViewController new];
+    controlsViewController.title = @"Helm";
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:controlsViewController];
+    self.window = [UIWindow new];
+    self.window.frame = [[UIScreen mainScreen] bounds];
+    [self.window setRootViewController:self.navigationController];
+    [self.window makeKeyAndVisible];
+
+    [self.connectionController connectToHost:@"192.168.42.1" port:2000];
+    
     return YES;
 }
 
@@ -40,6 +61,12 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark ConnectionControllerDelegate
+
+- (void)connectionController:(ConnectionController *)connectionController didGetNMEAMessage:(NSString *)NMEAMessage {
+    NSLog(@"RX: %@", NMEAMessage);
 }
 
 @end

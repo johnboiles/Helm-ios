@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ConnectionController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (readonly) ConnectionController *connectionController;
 
++ (AppDelegate *)sharedDelegate;
 
 @end
 

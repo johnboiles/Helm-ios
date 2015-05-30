@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421727851AC26AF700D7EFCA /* ConnectionController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 421727841AC26AF700D7EFCA /* ConnectionController.mm */; };
+		4217278E1AC26F6E00D7EFCA /* NMEAMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 421727881AC26F6E00D7EFCA /* NMEAMessage.cpp */; };
+		4217278F1AC26F6E00D7EFCA /* NMEAParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4217278A1AC26F6E00D7EFCA /* NMEAParser.cpp */; };
+		421727901AC26F6E00D7EFCA /* NMEAShared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4217278C1AC26F6E00D7EFCA /* NMEAShared.cpp */; };
+		421727941AC27AB900D7EFCA /* HMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 421727931AC27AB900D7EFCA /* HMButton.m */; };
+		428792841B1977C200D6D434 /* autopilot.png in Resources */ = {isa = PBXBuildFile; fileRef = 428792811B1977C200D6D434 /* autopilot.png */; };
+		428792851B1977C200D6D434 /* autopilot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428792821B1977C200D6D434 /* autopilot@2x.png */; };
+		428792861B1977C200D6D434 /* autopilot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428792831B1977C200D6D434 /* autopilot@3x.png */; };
+		4287928D1B1979F000D6D434 /* black_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 428792871B1979F000D6D434 /* black_button.png */; };
+		4287928E1B1979F000D6D434 /* black_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428792881B1979F000D6D434 /* black_button@2x.png */; };
+		4287928F1B1979F000D6D434 /* black_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428792891B1979F000D6D434 /* black_button@3x.png */; };
+		428792901B1979F000D6D434 /* red_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4287928A1B1979F000D6D434 /* red_button.png */; };
+		428792911B1979F000D6D434 /* red_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4287928B1B1979F000D6D434 /* red_button@2x.png */; };
+		428792921B1979F000D6D434 /* red_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4287928C1B1979F000D6D434 /* red_button@3x.png */; };
+		428792951B197C7600D6D434 /* AutopilotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 428792941B197C7600D6D434 /* AutopilotView.m */; };
+		428792981B197CF000D6D434 /* AppStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 428792971B197CF000D6D434 /* AppStyle.m */; };
 		42BFDF051ABE04FD005461EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF041ABE04FD005461EB /* main.m */; };
 		42BFDF081ABE04FD005461EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF071ABE04FD005461EB /* AppDelegate.m */; };
-		42BFDF0B1ABE04FD005461EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF0A1ABE04FD005461EB /* ViewController.m */; };
-		42BFDF0E1ABE04FD005461EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BFDF0C1ABE04FD005461EB /* Main.storyboard */; };
 		42BFDF101ABE04FD005461EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BFDF0F1ABE04FD005461EB /* Images.xcassets */; };
 		42BFDF131ABE04FD005461EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42BFDF111ABE04FD005461EB /* LaunchScreen.xib */; };
 		42BFDF1F1ABE04FD005461EB /* HelmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF1E1ABE04FD005461EB /* HelmTests.m */; };
+		42BFDF2E1ABE0604005461EB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 42BFDF2D1ABE0604005461EB /* Podfile */; };
+		42BFDF361ABE068F005461EB /* ControlsView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF331ABE068F005461EB /* ControlsView.mm */; };
+		42BFDF371ABE068F005461EB /* ControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BFDF351ABE068F005461EB /* ControlsViewController.m */; };
+		8205219D23E0FFF657E0A54D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBCB7E8AE633D0ED9B86F03 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +45,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		104800BFC4E0A6A2EF15C3FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		421727831AC26AF700D7EFCA /* ConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionController.h; sourceTree = "<group>"; };
+		421727841AC26AF700D7EFCA /* ConnectionController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConnectionController.mm; sourceTree = "<group>"; };
+		421727881AC26F6E00D7EFCA /* NMEAMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NMEAMessage.cpp; sourceTree = "<group>"; };
+		421727891AC26F6E00D7EFCA /* NMEAMessage.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = NMEAMessage.h; sourceTree = "<group>"; };
+		4217278A1AC26F6E00D7EFCA /* NMEAParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NMEAParser.cpp; sourceTree = "<group>"; };
+		4217278B1AC26F6E00D7EFCA /* NMEAParser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = NMEAParser.h; sourceTree = "<group>"; };
+		4217278C1AC26F6E00D7EFCA /* NMEAShared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NMEAShared.cpp; sourceTree = "<group>"; };
+		4217278D1AC26F6E00D7EFCA /* NMEAShared.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = NMEAShared.h; sourceTree = "<group>"; };
+		421727911AC26FB000D7EFCA /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		421727921AC27AB900D7EFCA /* HMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMButton.h; sourceTree = "<group>"; };
+		421727931AC27AB900D7EFCA /* HMButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMButton.m; sourceTree = "<group>"; };
+		428792811B1977C200D6D434 /* autopilot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autopilot.png; sourceTree = "<group>"; };
+		428792821B1977C200D6D434 /* autopilot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "autopilot@2x.png"; sourceTree = "<group>"; };
+		428792831B1977C200D6D434 /* autopilot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "autopilot@3x.png"; sourceTree = "<group>"; };
+		428792871B1979F000D6D434 /* black_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_button.png; sourceTree = "<group>"; };
+		428792881B1979F000D6D434 /* black_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black_button@2x.png"; sourceTree = "<group>"; };
+		428792891B1979F000D6D434 /* black_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black_button@3x.png"; sourceTree = "<group>"; };
+		4287928A1B1979F000D6D434 /* red_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_button.png; sourceTree = "<group>"; };
+		4287928B1B1979F000D6D434 /* red_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_button@2x.png"; sourceTree = "<group>"; };
+		4287928C1B1979F000D6D434 /* red_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_button@3x.png"; sourceTree = "<group>"; };
+		428792931B197C7600D6D434 /* AutopilotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutopilotView.h; sourceTree = "<group>"; };
+		428792941B197C7600D6D434 /* AutopilotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutopilotView.m; sourceTree = "<group>"; };
+		428792961B197CF000D6D434 /* AppStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStyle.h; sourceTree = "<group>"; };
+		428792971B197CF000D6D434 /* AppStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStyle.m; sourceTree = "<group>"; };
 		42BFDEFF1ABE04FD005461EB /* Helm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BFDF031ABE04FD005461EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42BFDF041ABE04FD005461EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42BFDF061ABE04FD005461EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42BFDF071ABE04FD005461EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		42BFDF091ABE04FD005461EB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		42BFDF0A1ABE04FD005461EB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		42BFDF0D1ABE04FD005461EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42BFDF0F1ABE04FD005461EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42BFDF121ABE04FD005461EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		42BFDF181ABE04FD005461EB /* HelmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BFDF1D1ABE04FD005461EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42BFDF1E1ABE04FD005461EB /* HelmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelmTests.m; sourceTree = "<group>"; };
+		42BFDF2D1ABE0604005461EB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		42BFDF321ABE068F005461EB /* ControlsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsView.h; sourceTree = "<group>"; };
+		42BFDF331ABE068F005461EB /* ControlsView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControlsView.mm; sourceTree = "<group>"; };
+		42BFDF341ABE068F005461EB /* ControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsViewController.h; sourceTree = "<group>"; };
+		42BFDF351ABE068F005461EB /* ControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsViewController.m; sourceTree = "<group>"; };
+		A8454F3F4F181C9069DB5E61 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EBBCB7E8AE633D0ED9B86F03 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8205219D23E0FFF657E0A54D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +108,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EFD4318234EB7656D1BB547 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBBCB7E8AE633D0ED9B86F03 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		421727861AC26F6E00D7EFCA /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				421727871AC26F6E00D7EFCA /* NMEA */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		421727871AC26F6E00D7EFCA /* NMEA */ = {
+			isa = PBXGroup;
+			children = (
+				421727911AC26FB000D7EFCA /* types.h */,
+				421727881AC26F6E00D7EFCA /* NMEAMessage.cpp */,
+				421727891AC26F6E00D7EFCA /* NMEAMessage.h */,
+				4217278A1AC26F6E00D7EFCA /* NMEAParser.cpp */,
+				4217278B1AC26F6E00D7EFCA /* NMEAParser.h */,
+				4217278C1AC26F6E00D7EFCA /* NMEAShared.cpp */,
+				4217278D1AC26F6E00D7EFCA /* NMEAShared.h */,
+			);
+			path = NMEA;
+			sourceTree = "<group>";
+		};
+		4287927F1B1977C200D6D434 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				428792801B1977C200D6D434 /* Images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		428792801B1977C200D6D434 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				428792811B1977C200D6D434 /* autopilot.png */,
+				428792821B1977C200D6D434 /* autopilot@2x.png */,
+				428792831B1977C200D6D434 /* autopilot@3x.png */,
+				428792871B1979F000D6D434 /* black_button.png */,
+				428792881B1979F000D6D434 /* black_button@2x.png */,
+				428792891B1979F000D6D434 /* black_button@3x.png */,
+				4287928A1B1979F000D6D434 /* red_button.png */,
+				4287928B1B1979F000D6D434 /* red_button@2x.png */,
+				4287928C1B1979F000D6D434 /* red_button@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		42BFDEF61ABE04FD005461EB = {
 			isa = PBXGroup;
 			children = (
+				4287927F1B1977C200D6D434 /* Assets */,
+				421727861AC26F6E00D7EFCA /* Libraries */,
 				42BFDF011ABE04FD005461EB /* Helm */,
 				42BFDF1B1ABE04FD005461EB /* HelmTests */,
 				42BFDF001ABE04FD005461EB /* Products */,
+				8B2DC00AF5E036352A138BE9 /* Pods */,
+				1EFD4318234EB7656D1BB547 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,12 +189,21 @@
 			children = (
 				42BFDF061ABE04FD005461EB /* AppDelegate.h */,
 				42BFDF071ABE04FD005461EB /* AppDelegate.m */,
-				42BFDF091ABE04FD005461EB /* ViewController.h */,
-				42BFDF0A1ABE04FD005461EB /* ViewController.m */,
-				42BFDF0C1ABE04FD005461EB /* Main.storyboard */,
 				42BFDF0F1ABE04FD005461EB /* Images.xcassets */,
 				42BFDF111ABE04FD005461EB /* LaunchScreen.xib */,
 				42BFDF021ABE04FD005461EB /* Supporting Files */,
+				42BFDF321ABE068F005461EB /* ControlsView.h */,
+				42BFDF331ABE068F005461EB /* ControlsView.mm */,
+				42BFDF341ABE068F005461EB /* ControlsViewController.h */,
+				42BFDF351ABE068F005461EB /* ControlsViewController.m */,
+				421727831AC26AF700D7EFCA /* ConnectionController.h */,
+				421727841AC26AF700D7EFCA /* ConnectionController.mm */,
+				421727921AC27AB900D7EFCA /* HMButton.h */,
+				421727931AC27AB900D7EFCA /* HMButton.m */,
+				428792931B197C7600D6D434 /* AutopilotView.h */,
+				428792941B197C7600D6D434 /* AutopilotView.m */,
+				428792961B197CF000D6D434 /* AppStyle.h */,
+				428792971B197CF000D6D434 /* AppStyle.m */,
 			);
 			path = Helm;
 			sourceTree = "<group>";
@@ -96,6 +211,7 @@
 		42BFDF021ABE04FD005461EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				42BFDF2D1ABE0604005461EB /* Podfile */,
 				42BFDF031ABE04FD005461EB /* Info.plist */,
 				42BFDF041ABE04FD005461EB /* main.m */,
 			);
@@ -119,6 +235,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8B2DC00AF5E036352A138BE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8454F3F4F181C9069DB5E61 /* Pods.debug.xcconfig */,
+				104800BFC4E0A6A2EF15C3FF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42BFDF221ABE04FD005461EB /* Build configuration list for PBXNativeTarget "Helm" */;
 			buildPhases = (
+				D9C2823CAAD7B2D3D32FFEFE /* Check Pods Manifest.lock */,
 				42BFDEFB1ABE04FD005461EB /* Sources */,
 				42BFDEFC1ABE04FD005461EB /* Frameworks */,
 				42BFDEFD1ABE04FD005461EB /* Resources */,
+				37774DA535BDF002FEFEDC83 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,9 +326,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42BFDF0E1ABE04FD005461EB /* Main.storyboard in Resources */,
+				4287928E1B1979F000D6D434 /* black_button@2x.png in Resources */,
+				428792921B1979F000D6D434 /* red_button@3x.png in Resources */,
+				4287928F1B1979F000D6D434 /* black_button@3x.png in Resources */,
+				428792911B1979F000D6D434 /* red_button@2x.png in Resources */,
+				42BFDF2E1ABE0604005461EB /* Podfile in Resources */,
+				428792841B1977C200D6D434 /* autopilot.png in Resources */,
 				42BFDF131ABE04FD005461EB /* LaunchScreen.xib in Resources */,
+				428792851B1977C200D6D434 /* autopilot@2x.png in Resources */,
 				42BFDF101ABE04FD005461EB /* Images.xcassets in Resources */,
+				4287928D1B1979F000D6D434 /* black_button.png in Resources */,
+				428792861B1977C200D6D434 /* autopilot@3x.png in Resources */,
+				428792901B1979F000D6D434 /* red_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,14 +350,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37774DA535BDF002FEFEDC83 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9C2823CAAD7B2D3D32FFEFE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42BFDEFB1ABE04FD005461EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42BFDF0B1ABE04FD005461EB /* ViewController.m in Sources */,
+				428792951B197C7600D6D434 /* AutopilotView.m in Sources */,
+				4217278E1AC26F6E00D7EFCA /* NMEAMessage.cpp in Sources */,
+				42BFDF361ABE068F005461EB /* ControlsView.mm in Sources */,
+				4217278F1AC26F6E00D7EFCA /* NMEAParser.cpp in Sources */,
+				421727941AC27AB900D7EFCA /* HMButton.m in Sources */,
+				421727851AC26AF700D7EFCA /* ConnectionController.mm in Sources */,
+				428792981B197CF000D6D434 /* AppStyle.m in Sources */,
 				42BFDF081ABE04FD005461EB /* AppDelegate.m in Sources */,
+				42BFDF371ABE068F005461EB /* ControlsViewController.m in Sources */,
 				42BFDF051ABE04FD005461EB /* main.m in Sources */,
+				421727901AC26F6E00D7EFCA /* NMEAShared.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +421,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		42BFDF0C1ABE04FD005461EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42BFDF0D1ABE04FD005461EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		42BFDF111ABE04FD005461EB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -343,6 +512,7 @@
 		};
 		42BFDF231ABE04FD005461EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8454F3F4F181C9069DB5E61 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Helm/Info.plist;
@@ -353,6 +523,7 @@
 		};
 		42BFDF241ABE04FD005461EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 104800BFC4E0A6A2EF15C3FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Helm/Info.plist;
@@ -414,6 +585,7 @@
 				42BFDF241ABE04FD005461EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42BFDF251ABE04FD005461EB /* Build configuration list for PBXNativeTarget "HelmTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +594,7 @@
 				42BFDF271ABE04FD005461EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
