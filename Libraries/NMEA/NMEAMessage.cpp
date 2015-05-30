@@ -70,7 +70,7 @@ NMEAMessageRMB::NMEAMessageRMB(const char *message) : BaseNMEAMessage() {
 
 
 NMEAMessageRMC::NMEAMessageRMC(const char *message) : BaseNMEAMessage() {
-    char *fragments[12];
+    char *fragments[13];
     int fragmentCount = 0;
     splitMessageIntoFragments(message, strlen(message), fragments, &fragmentCount);
 
