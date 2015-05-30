@@ -10,6 +10,7 @@
 @class HMButton;
 
 @interface AutopilotView : YOView
+@property (readonly) UILabel *statusLabel;
 @property (readonly) HMButton *minusOneButton;
 @property (readonly) HMButton *plusOneButton;
 @property (readonly) HMButton *minusTenButton;

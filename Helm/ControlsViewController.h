@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ControlsView;
 
 @interface ControlsViewController : UIViewController
+
+@property (readonly) ControlsView *contentView;
 
 @end

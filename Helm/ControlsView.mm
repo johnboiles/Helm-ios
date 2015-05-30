@@ -14,8 +14,8 @@
 #import "AutopilotView.h"
 
 @interface ControlsView ()
-//@property UIButton *lampButton;
 @property NSMutableArray *buttons;
+@property AutopilotView *autopilotView;
 @end
 
 @implementation ControlsView
@@ -31,25 +31,25 @@
 - (void)viewInit {
     self.backgroundColor = [UIColor colorWithRed:0.86 green:0.88 blue:0.89 alpha:1];
 
-    AutopilotView *autopilotView = [AutopilotView new];
-    [self addSubview:autopilotView];
+    self.autopilotView = [AutopilotView new];
+    [self addSubview:self.autopilotView];
     
-    autopilotView.minusOneButton.targetBlock = ^{
+    self.autopilotView.minusOneButton.targetBlock = ^{
         [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,861105FA*70\r\n"];
     };
-    autopilotView.plusOneButton.targetBlock = ^{
+    self.autopilotView.plusOneButton.targetBlock = ^{
         [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,861107F8*0B\r\n"];
     };
-    autopilotView.minusTenButton.targetBlock = ^{
+    self.autopilotView.minusTenButton.targetBlock = ^{
         [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,861106F9*0B\r\n"];
     };
-    autopilotView.plusTenButton.targetBlock = ^{
+    self.autopilotView.plusTenButton.targetBlock = ^{
         [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,861108F7*0B\r\n"];
     };
-    autopilotView.autoButton.targetBlock = ^{
+    self.autopilotView.autoButton.targetBlock = ^{
         [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,862101FE*73\r\n"];
     };
-    autopilotView.standbyButton.targetBlock = ^{
+    self.autopilotView.standbyButton.targetBlock = ^{
         [[AppDelegate sharedDelegate].connectionController sendMessage:@"$STSEA,862102FD*71\r\n"];
     };
 
@@ -70,7 +70,7 @@
         CGFloat x = 10;
         CGFloat y = 10 + 64;
         
-        CGRect autopilotRect = [layout setFrame:CGRectMake(0, y, size.width, 0) view:autopilotView options:YOLayoutOptionsSizeToFit | YOLayoutOptionsAlignCenterHorizontal];
+        CGRect autopilotRect = [layout setFrame:CGRectMake(0, y, size.width, 0) view:weakSelf.autopilotView options:YOLayoutOptionsSizeToFit | YOLayoutOptionsAlignCenterHorizontal];
         x = autopilotRect.origin.x;
         y += autopilotRect.size.height;
         y += 10;

@@ -11,11 +11,14 @@
 #import "ControlsViewController.h"
 #import "NMEAMessage.h"
 #import "SeaTalkMessage.h"
+#import "ControlsView.h"
+#import "AutopilotView.h"
 
 
 @interface AppDelegate () <ConnectionControllerDelegate>
 @property UINavigationController *navigationController;
 @property ConnectionController *connectionController;
+@property ControlsViewController *controlsViewController;
 @end
 
 @implementation AppDelegate
@@ -30,9 +33,9 @@
     self.connectionController = [ConnectionController new];
     self.connectionController.delegate = self;
 
-    ControlsViewController *controlsViewController = [ControlsViewController new];
-    controlsViewController.title = @"Helm";
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:controlsViewController];
+    self.controlsViewController = [ControlsViewController new];
+    self.controlsViewController.title = @"Helm";
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.controlsViewController];
     self.window = [UIWindow new];
     self.window.frame = [[UIScreen mainScreen] bounds];
     [self.window setRootViewController:self.navigationController];
@@ -73,13 +76,23 @@
         const char *messageString = [NMEAMessage cStringUsingEncoding:NSASCIIStringEncoding];
         NMEAMessageSEA message = NMEAMessageSEA(messageString);
 
-        if ([NMEAMessage hasPrefix:@"$STSEA,10"]) {
+        if (message.messageType() == SeaTalkMessageTypeWindAngle) {
             SeaTalkMessageWindAngle seaTalkMessage = SeaTalkMessageWindAngle(message.seaTalkMessage());
             NSLog(@"Wind angle: %f", seaTalkMessage.windAngle());
-        } else if ([NMEAMessage hasPrefix:@"$STSEA,84"]) {
+        } else if (message.messageType() == SeaTalkMessageTypeWindSpeed) {
+            SeaTalkMessageWindSpeed seaTalkMessage = SeaTalkMessageWindSpeed(message.seaTalkMessage());
+            NSLog(@"Wind Speed: %f", seaTalkMessage.windSpeed());
+        } else if (message.messageType() == SeaTalkMessageTypeCompassHeadingAutopilotCourseRudderPosition) {
             SeaTalkMessageCompassHeadingAutopilotCourseRudderPosition seaTalkMessage = SeaTalkMessageCompassHeadingAutopilotCourseRudderPosition(message.seaTalkMessage());
-            NSLog(@"Autopilot heading: %d", seaTalkMessage.autopilotCourse());
-            NSLog(@"Autopilot autoMode: %d", seaTalkMessage.isAutoMode());
+            NSLog(@"Autopilot mode: %d heading: %d", seaTalkMessage.isAutoMode(), seaTalkMessage.autopilotCourse());
+
+            NSString *formatString;
+            if (seaTalkMessage.isAutoMode()) {
+                formatString = @"A%03d";
+            } else {
+                formatString = @"S%03d";
+            }
+            self.controlsViewController.contentView.autopilotView.statusLabel.text = [NSString stringWithFormat:formatString, seaTalkMessage.autopilotCourse()];
         }
     }
 }

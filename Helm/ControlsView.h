@@ -7,7 +7,10 @@
 //
 
 #import <YOLayout/YOView.h>
+@class AutopilotView;
 
 @interface ControlsView : YOView
+
+@property (readonly) AutopilotView *autopilotView;
 
 @end

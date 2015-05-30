@@ -165,6 +165,7 @@ class NMEAMessageSEA : public BaseNMEAMessage
 public:
     NMEAMessageSEA(const char *message);
     NMEAMessageSEA(const uint8_t *seaTalkMessage, uint8_t seaTalkMessageLength);
+    uint8_t messageType() { return _seaTalkMessage[0]; }
     uint8_t *seaTalkMessage() { return _seaTalkMessage; }
     uint8_t seaTalkMessageLength() { return _seaTalkMessageLength; }
 private:

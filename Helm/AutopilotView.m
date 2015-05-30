@@ -11,6 +11,7 @@
 #import "HMButton.h"
 
 @interface AutopilotView ()
+@property UILabel *statusLabel;
 @property HMButton *minusOneButton;
 @property HMButton *plusOneButton;
 @property HMButton *minusTenButton;
@@ -26,6 +27,15 @@
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"autopilot.png"]];
     [self addSubview:backgroundView];
 
+    self.statusLabel = [UILabel new];
+    self.statusLabel.font = [UIFont fontWithName:@"Avenir-Black" size:36];
+    self.statusLabel.textColor = [UIColor colorWithRed:0.27 green:0.27 blue:0.27 alpha:1.00];
+    self.statusLabel.textAlignment = NSTextAlignmentCenter;
+    self.statusLabel.numberOfLines = 0;
+    self.statusLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.statusLabel.alpha = 1;
+    [self addSubview:self.statusLabel];
+    
     self.minusOneButton = [AppStyle newButtonWithTitle:nil];
     [self addSubview:self.minusOneButton];
 
@@ -47,6 +57,8 @@
     __weak typeof(self) weakSelf = self;
     self.layout = [YOLayout layoutWithLayoutBlock:^CGSize(id<YOLayout> layout, CGSize size) {
         CGSize backgroundViewSize = [layout setFrame:CGRectMake(0, 0, size.width, size.height) view:backgroundView options:YOLayoutOptionsSizeToFit].size;
+
+        [layout setFrame:CGRectMake(102, 39, 143, 49) view:weakSelf.statusLabel];
 
         [layout setFrame:CGRectMake(83, 117, 69, 44) view:weakSelf.minusOneButton];
 
